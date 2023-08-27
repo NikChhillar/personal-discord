@@ -24,6 +24,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
+import FileUpload from "../file-upload";
 
 const formSchema = z.object({
     name: z.string().min(1, {
@@ -98,15 +99,16 @@ const InitialModal = () => {
                                     render={({ field }) => (
                                         <FormItem>
                                             <FormControl>
-                                                {/* <FileUpload
+                                                <FileUpload
                                                     endpoint="serverImage"
                                                     value={field.value}
                                                     onChange={field.onChange}
-                                                /> */}
+                                                />
                                             </FormControl>
                                         </FormItem>
                                     )}
                                 />
+                                {/* TODO : Image upload */}
                             </div>
 
                             <FormField
@@ -123,7 +125,7 @@ const InitialModal = () => {
                                             <Input
                                                 disabled={isLoading}
                                                 className="bg-zinc-300/50 border-0 focus-visible:ring-0 text-black focus-visible:ring-offset-0"
-                                                placeholder="Enter server name"
+                                                placeholder="Server name..."
                                                 {...field}
                                             />
                                         </FormControl>
