@@ -18,7 +18,6 @@ Welcome to the documentation for the Discord Clone project built using Next.js. 
 - [Usage](#usage)
 - [Technologies Used](#technologies-used)
 - [Contributing](#contributing)
-- [License](#license)
 
 ## Demo
 
@@ -87,14 +86,6 @@ Contributions are welcome! If you'd like to contribute to this project, please f
 3. Make your changes and commit them with descriptive commit messages.
 4. Push your changes to your forked repository.
 5. Create a pull request describing your changes.
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
-
----
-
-Feel free to customize this README template according to your project's specific details. Good luck with your Discord Clone project! If you have any further questions, feel free to ask.
 
 
 ## Deploy on Vercel
