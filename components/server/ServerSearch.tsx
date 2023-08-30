@@ -9,24 +9,60 @@ import {
   CommandItem,
   CommandList,
 } from "../ui/command";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useParams, useRouter } from "next/navigation";
 
 interface ServerSearchProps {
   data: {
     label: string;
     type: "channel" | "member";
     data:
-      | {
-          icon: React.ReactNode;
-          name: string;
-          id: string;
-        }[]
-      | undefined;
+    | {
+      icon: React.ReactNode;
+      name: string;
+      id: string;
+    }[]
+    | undefined;
   }[];
 }
 
 const ServerSearch = ({ data }: ServerSearchProps) => {
+
+  const router = useRouter()
+  const params = useParams()
+
   const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    const down = (e: KeyboardEvent) => {
+      if (e.key === 'k' && (e.metaKey || e.ctrlKey)) {
+        e.preventDefault();
+        setOpen((open) => !open);
+      }
+    }
+
+    document.addEventListener("keydown", down);
+    return () => document.removeEventListener("keydown", down)
+
+  }, [])
+
+  const onClick = ({
+    id,
+    type,
+  }: {
+    id: string;
+    type: "channel" | "member";
+  }) => {
+    setOpen(false);
+
+    if (type === "member") {
+      return router.push(`/servers/${params?.serverId}/conversations/${id}`)
+    }
+
+    if (type === "channel") {
+      return router.push(`/servers/${params?.serverId}/channels/${id}`)
+    }
+  };
 
   return (
     <>
@@ -53,7 +89,7 @@ const ServerSearch = ({ data }: ServerSearchProps) => {
               <CommandGroup key={label} heading={label}>
                 {data?.map(({ id, icon, name }) => {
                   return (
-                    <CommandItem key={id} onSelect={() => {}}>
+                    <CommandItem key={id} onSelect={() => onClick({ id, type })}>
                       {icon}
                       <span>{name}</span>
                     </CommandItem>
