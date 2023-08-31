@@ -55,3 +55,68 @@ export async function DELETE(
     return new NextResponse("Internal Error", { status: 500 });
   }
 }
+
+export async function PATCH(
+  req: Request,
+  { params }: { params: { channelId: string } }
+) {
+  try {
+    const profile = await currentProfile();
+
+    const { name, type } = await req.json();
+
+    const { searchParams } = new URL(req.url);
+    const serverId = searchParams.get("serverId");
+
+    if (!profile) {
+      return new NextResponse("Unauthorized", { status: 401 });
+    }
+
+    if (!serverId) {
+      return new NextResponse("no server id found", { status: 400 });
+    }
+
+    if (!params.channelId) {
+      return new NextResponse("no channel id found", { status: 401 });
+    }
+
+    if (name === "general") {
+      return new NextResponse("general can't be used", { status: 401 });
+    }
+
+    const server = await db.server.update({
+      where: {
+        id: serverId,
+        members: {
+          some: {
+            profileId: profile.id,
+            role: {
+              in: [MemberRole.ADMIN, MemberRole.MODERATOR],
+            },
+          },
+        },
+      },
+      data: {
+        channels: {
+          update: {
+            where: {
+              id: params.channelId,
+              NOT: {
+                name: "general",
+              },
+            },
+            data: {
+              name,
+              type,
+            },
+          },
+        },
+      },
+    });
+
+    return NextResponse.json(server);
+  } catch (error) {
+    console.log(error, "CHANNEL-patch");
+    return new NextResponse("Internal Error", { status: 500 });
+  }
+}
