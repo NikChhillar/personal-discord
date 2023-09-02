@@ -21,7 +21,7 @@ Welcome to the documentation for the Discord Clone project built using Next.js. 
 
 ## Demo
 
-Check out the live demo of the project [here](https://your-demo-link.com).
+Check out the live demo of the project [here](https://personal-discord-production.up.railway.app/).
 
 ## Key Features
 
