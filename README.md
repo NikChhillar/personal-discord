@@ -1,10 +1,10 @@
 
 
-# Discord Clone using Next.js
+# EchoSphere (A social media platform) using Next.js
 
 
 
-Welcome to the documentation for the Discord Clone project built using Next.js. This project aims to replicate the popular features of Discord, offering real-time messaging, voice and video calls, member management, server customization, and more. The application is designed to provide a seamless and intuitive user experience while maintaining a professional and modern UI.
+Welcome to the documentation for the echosphere project built using Next.js. This project aims to replicate the popular features of Discord, offering real-time messaging, voice and video calls, member management, server customization, and more. The application is designed to provide a seamless and intuitive user experience while maintaining a professional and modern UI.
 
 ## Table of Contents
 
@@ -20,7 +20,7 @@ Welcome to the documentation for the Discord Clone project built using Next.js. 
 
 ## Demo
 
-Check out the live demo of the project [here](https://personal-discord-production.up.railway.app/).
+Check out the live demo of the project [here](Link here).
 
 ## Key Features
 
@@ -87,7 +87,7 @@ Contributions are welcome! If you'd like to contribute to this project, please f
 5. Create a pull request describing your changes.
 
 
-## Deploy on Vercel
+## Deploy on Vercel or Railway
 
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
