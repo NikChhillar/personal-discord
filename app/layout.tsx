@@ -11,7 +11,7 @@ import { QueryProvider } from '@/components/providers/query-provider'
 const font = Open_Sans({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Discord beluga',
+  title: 'EchoSphere',
   description: 'Discord clone created using nextjs 13',
 }
 
