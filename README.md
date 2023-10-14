@@ -1,8 +1,4 @@
-
-
 # EchoSphere (A social media platform) using Next.js
-
-
 
 Welcome to the documentation for the echosphere project built using Next.js. This project aims to replicate the popular features of Discord, offering real-time messaging, voice and video calls, member management, server customization, and more. The application is designed to provide a seamless and intuitive user experience while maintaining a professional and modern UI.
 
@@ -20,7 +16,7 @@ Welcome to the documentation for the echosphere project built using Next.js. Thi
 
 ## Demo
 
-Check out the live demo of the project [here](Link here).
+Check out the live demo of the project [here](https://personal-discord-nikchhillar.vercel.app/).
 
 ## Key Features
 
