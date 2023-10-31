@@ -16,7 +16,7 @@ Welcome to the documentation for the echosphere project built using Next.js. Thi
 
 ## Demo
 
-Check out the live demo of the project [here](https://personal-discord-nikchhillar.vercel.app/).
+Check out the live demo of the project [here](https://personal-discord-production.up.railway.app/).
 
 ## Key Features
 
