@@ -48,7 +48,7 @@ Before you begin, make sure you have the following installed:
 
 ### Installation
 
-1. Clone the repository: `git clone https://github.com/your-username/your-repo.git`
+1. Clone the repository: `git clone https://github.com/NikChhillar/personal-discord.git`
 2. Navigate to the project directory: `cd your-repo`
 3. Install dependencies: `npm install`
 
